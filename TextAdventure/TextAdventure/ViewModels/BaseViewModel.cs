@@ -10,7 +10,7 @@ namespace TextAdventure.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public IDataStore<old_Item> DataStore => DependencyService.Get<IDataStore<old_Item>>();
 
         bool isBusy = false;
         public bool IsBusy

@@ -10,7 +10,7 @@ namespace TextAdventure.Views
 {
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public old_Item Item { get; set; }
 
         public NewItemPage()
         {

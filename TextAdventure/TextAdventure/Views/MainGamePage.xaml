@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TextAdventure.Views.MainGamePage"
+             xmlns:vm="clr-namespace:TextAdventure.ViewModels"
+             BackgroundColor="#282D32"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" 
+              Margin="0, 5, 0, 0"
+              RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="15" />
+                </Grid.ColumnDefinitions>
+                <Editor Grid.Column="0"
+                    Text="Room Info typed out here..."
+                    TextColor="Linen"
+                    BackgroundColor="#282D32"
+                    IsReadOnly="True"
+                    AutoSize="TextChanges"
+                    FontFamily="serif"
+                    IsSpellCheckEnabled="False"
+                    IsTextPredictionEnabled="False"
+                    CharacterSpacing="10"
+                    Focused="Editor_Focused">
+                </Editor>
+                <Button Grid.Column="1" />
+            </Grid>
+
+            <Grid Grid.Row="1" 
+              RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0">
+                    <Label Background="Black"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   TextColor="Linen"
+                   Text="-- Player Info --" />
+                </StackLayout>
+                <Label Grid.Column="1"
+                   Background="Black"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   TextColor="Linen"
+                   Text="-- Map --" />
+            </Grid>
+
+            <Grid Grid.Row="2" 
+              VerticalOptions="End"
+              RowSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0"
+                    Text="Inventory" />
+                <Button Grid.Column="1"
+                    Text="Actions" />
+                <Button Grid.Column="2"
+                    Text="Exits" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

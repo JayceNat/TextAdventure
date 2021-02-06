@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
 using TextAdventure.Models;
 using Xamarin.Forms;
 
@@ -49,7 +46,7 @@ namespace TextAdventure.ViewModels
 
         private async void OnSave()
         {
-            Item newItem = new Item()
+            old_Item newItem = new old_Item()
             {
                 Id = Guid.NewGuid().ToString(),
                 Text = Text,

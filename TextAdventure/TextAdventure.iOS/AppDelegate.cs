@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿using System.IO;
 using Foundation;
 using UIKit;
 
@@ -22,9 +19,13 @@ namespace TextAdventure.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            string fileName = "textAdventure_db.sqlite";
+            string fileLocation = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "..", "Library");
+            string full_Path = Path.Combine(fileLocation, fileName);
+
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new App(full_Path));
 
             return base.FinishedLaunching(app, options);
         }

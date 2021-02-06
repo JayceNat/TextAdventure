@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using TextAdventure.ViewModels;
 using TextAdventure.Views;
 using Xamarin.Forms;
 
 namespace TextAdventure
 {
-    public partial class AppShell : Xamarin.Forms.Shell
+    public partial class AppShell : Shell
     {
         public AppShell()
         {
@@ -17,7 +15,7 @@ namespace TextAdventure
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//LoginPage");
+            await Current.GoToAsync("//LoginPage");
         }
     }
 }

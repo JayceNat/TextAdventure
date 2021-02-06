@@ -1,19 +1,25 @@
-﻿using System;
-using TextAdventure.Services;
-using TextAdventure.Views;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TextAdventure
 {
     public partial class App : Application
     {
+        public static string DB_PATH = string.Empty;
 
         public App()
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            MainPage = new AppShell();
+        }
+
+        public App(string DB_Path)
+        {
+            InitializeComponent();
+
+            DB_PATH = DB_Path;
+
             MainPage = new AppShell();
         }
 

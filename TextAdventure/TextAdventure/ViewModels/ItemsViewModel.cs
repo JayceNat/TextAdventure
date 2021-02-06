@@ -10,20 +10,20 @@ namespace TextAdventure.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        private Item _selectedItem;
+        private old_Item _selectedItem;
 
-        public ObservableCollection<Item> Items { get; }
+        public ObservableCollection<old_Item> Items { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-        public Command<Item> ItemTapped { get; }
+        public Command<old_Item> ItemTapped { get; }
 
         public ItemsViewModel()
         {
             Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Items = new ObservableCollection<old_Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            ItemTapped = new Command<Item>(OnItemSelected);
+            ItemTapped = new Command<old_Item>(OnItemSelected);
 
             AddItemCommand = new Command(OnAddItem);
         }
@@ -57,7 +57,7 @@ namespace TextAdventure.ViewModels
             SelectedItem = null;
         }
 
-        public Item SelectedItem
+        public old_Item SelectedItem
         {
             get => _selectedItem;
             set
@@ -72,7 +72,7 @@ namespace TextAdventure.ViewModels
             await Shell.Current.GoToAsync(nameof(NewItemPage));
         }
 
-        async void OnItemSelected(Item item)
+        async void OnItemSelected(old_Item item)
         {
             if (item == null)
                 return;
